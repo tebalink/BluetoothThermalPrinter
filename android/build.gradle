@@ -32,20 +32,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = '17'
-    }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
         minSdkVersion 21
-        targetSdk 34
+        targetSdkVersion 34
     }
 
     lint {
         disable.add('InvalidPackage')
+    }
+
+    kotlin {
+        jvmToolchain(17)
     }
 }
 
